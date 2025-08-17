@@ -113,10 +113,20 @@ p {
     align-items: center;
 }
 
+.nav-logo {
+    display: flex; /* This is the key. It makes the children appear in a row. */
+    align-items: center; /* This vertically aligns the image and the text. */
+    gap: 0.5rem; /* This adds a small space between the image and the text. */
+}
+
 .nav-logo h2 {
     color: #2563eb;
     margin: 0;
     font-size: 1.5rem;
+}
+.nav-logo img {
+    height: 40px;
+    width: auto;
 }
 
 .nav-menu {
@@ -154,7 +164,7 @@ p {
 .hero {
     padding: 120px 0 80px;
     background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-    min-height: 100vh;
+    min-height: 5vh;
     display: flex;
     align-items: center;
 }
@@ -163,10 +173,10 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
 }
 
 .hero-content h1 {
@@ -179,6 +189,12 @@ p {
     color: #64748b;
     margin-bottom: 2rem;
 }
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
 .hero-buttons {
     display: flex;
@@ -187,24 +203,16 @@ p {
 }
 
 .hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url('./assets/logo US ASSET.png'); /* Replace with your image's path */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* Make the image container fill its column */
+    min-height: 400px; /* Set a minimum height for the image */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* A nice shadow for the image container */
 }
 
-.image-placeholder {
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 4rem;
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
-}
 
 .image-placeholder p {
     margin-top: 1rem;
@@ -355,17 +363,12 @@ section {
     transform: translateY(-5px);
 }
 
-.machinery-image {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    color: white;
-    font-size: 2.5rem;
+.machinery-card img {
+    width: 100%;
+    height: 200px; /* You can adjust this height as needed */
+    object-fit: cover; /* This makes sure the image covers the area without distortion */
+    border-radius: 10px; /* Rounded corners for the image */
+    margin-bottom: 1.5rem; /* Adds space between the image and the title */
 }
 
 .machinery-card h3 {
@@ -644,6 +647,13 @@ section {
 
     .hero-container {
         grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
