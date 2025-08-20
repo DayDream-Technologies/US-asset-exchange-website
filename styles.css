@@ -441,44 +441,29 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
 
 .project-card {
     background: white;
-    padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
+    overflow: hidden; /* This is important to ensure the image doesn't overflow rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.project-logo {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    color: white;
-    font-size: 2rem;
-}
-
-.project-card h3 {
-    color: #1e293b;
-    margin-bottom: 1rem;
-}
-
-.project-card p {
-    color: #64748b;
+.project-card img {
+    width: 100%;
+    height: 250px; /* Adjust this height as needed to fit your images */
+    object-fit: cover; /* This ensures the image fills the card without distortion */
+    display: block; /* Removes any extra space below the image */
 }
 
 /* Contact Section */
